@@ -1,0 +1,254 @@
+/* =========================
+   HISTORY SECTION
+========================= */
+
+.history-section {
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 30px;
+}
+
+.section-header h1 {
+  margin: 0 0 10px;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.section-header p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   HISTORY LIST
+========================= */
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+  margin-top: 40px;
+}
+
+
+/* =========================
+   HISTORY CARD
+========================= */
+
+.history-card {
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+
+  width: 100%;
+  padding: 18px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.history-card:hover {
+  border-color: #d8ded5;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================
+   HISTORY IMAGE
+========================= */
+
+.history-card img {
+  flex-shrink: 0;
+
+  width: 100px;
+  height: 100px;
+
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+
+/* =========================
+   HISTORY CONTENT
+========================= */
+
+.history-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-card h3 {
+  margin: 0 0 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.history-card p {
+  margin: 0 0 6px;
+
+  color: #555555;
+
+  font-size: 12px;
+}
+
+.history-card small {
+  color: #999999;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   DETAIL LINK
+========================= */
+
+.history-card-link {
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 40px;
+  padding: 70px 30px;
+
+  text-align: center;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+
+  background: #ffffff;
+}
+
+.empty-state h3 {
+  margin: 0 0 10px;
+
+  font-size: 18px;
+}
+
+.empty-state p {
+  max-width: 400px;
+
+  margin: 0 auto;
+
+  color: #777777;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.empty-state .primary-button {
+  margin-top: 24px;
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .history-section {
+    max-width: 100%;
+
+    padding: 70px 32px 60px;
+  }
+
+  .section-header {
+    gap: 20px;
+  }
+
+  .history-card {
+    gap: 18px;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .history-section {
+    padding: 50px 20px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .section-header h1 {
+    font-size: 36px;
+  }
+
+  .history-list {
+    margin-top: 30px;
+  }
+
+  .history-card {
+    display: grid;
+
+    grid-template-columns: 70px minmax(0, 1fr);
+
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .history-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .history-card-link {
+    grid-column: 1 / -1;
+
+    width: 100%;
+  }
+
+  .empty-state {
+    padding: 50px 20px;
+  }
+}

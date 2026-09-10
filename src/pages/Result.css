@@ -1,0 +1,96 @@
+/* =========================
+   RESULT PAGE
+========================= */
+
+.result-section {
+  max-width: 800px;
+  margin: auto;
+}
+
+
+/* =========================
+   RESULT IMAGE
+========================= */
+
+.result-image {
+  display: block;
+
+  width: 100%;
+  max-height: 500px;
+
+  margin-top: 24px;
+
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card {
+  margin-top: 24px;
+}
+
+.result-label {
+  font-size: 14px;
+  color: #6d756c;
+}
+
+.result-card h2 {
+  margin-top: 8px;
+}
+
+
+/* =========================
+   CONFIDENCE
+========================= */
+
+.confidence {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 20px 0;
+  padding: 16px;
+
+  border-radius: 12px;
+  background: #f1f5ef;
+}
+
+.confidence strong {
+  font-size: 18px;
+}
+
+
+/* =========================
+   RESULT ACTIONS
+========================= */
+
+.result-actions {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .result-actions {
+    flex-direction: column;
+  }
+
+  .result-actions a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .confidence {
+    gap: 12px;
+  }
+}

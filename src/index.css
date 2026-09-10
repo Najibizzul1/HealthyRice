@@ -1,0 +1,218 @@
+/* =========================
+   TITTLE
+========================= */
+.page-title {
+  margin: 0 0 10px;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+/* =========================
+   RESET & BASE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: #ffffff;
+  color: #000000;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* =========================
+   APP LAYOUT
+========================= */
+
+#root {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+main {
+  flex: 1;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-button,
+.secondary-button,
+.danger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  padding: 0 20px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.primary-button {
+  border: 1px solid #485c11;
+
+  background: #485c11;
+  color: #ffffff;
+}
+
+.primary-button:hover {
+  background: #39490d;
+  border-color: #39490d;
+}
+
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
+
+.secondary-button {
+  border: 1px solid #485c11;
+
+  background: #ffffff;
+  color: #485c11;
+}
+
+.secondary-button:hover {
+  background: #f1f5ef;
+}
+
+
+/* =========================
+   DANGER BUTTON
+========================= */
+
+.danger-button {
+  border: 1px solid #b85c5c;
+
+  background: #ffffff;
+  color: #a94442;
+}
+
+.danger-button:hover {
+  background: #fff5f5;
+}
+
+
+/* =========================
+   DISABLED BUTTON
+========================= */
+
+.primary-button:disabled,
+.secondary-button:disabled,
+.danger-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .danger-button {
+    min-height: 44px;
+    padding: 0 18px;
+
+    font-size: 14px;
+  }
+}

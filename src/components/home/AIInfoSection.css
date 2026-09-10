@@ -1,0 +1,161 @@
+/* =========================
+   AI INFO SECTION
+========================= */
+
+.ai-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 70px;
+
+  min-height: 650px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+/* AI content */
+.ai-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+}
+
+/* Section heading */
+.ai-heading {
+  margin-bottom: 40px;
+}
+
+.ai-content h2 {
+  margin: 0;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: clamp(40px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+
+/* =========================
+   AI INFORMATION LIST
+========================= */
+
+.ai-list {
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+}
+
+.ai-item {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr);
+  gap: 20px;
+
+  padding: 17px 0;
+
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.ai-number {
+  color: #777777;
+  font-size: 10px;
+}
+
+.ai-item p {
+  margin: 0;
+
+  color: #333333;
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   AI IMAGE
+========================= */
+
+.ai-image-wrapper {
+  width: 100%;
+  height: 550px;
+
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.ai-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .ai-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+
+    min-height: auto;
+    padding: 70px 32px;
+  }
+
+  .ai-content {
+    width: 100%;
+  }
+
+  .ai-heading {
+    margin-bottom: 32px;
+  }
+
+  .ai-content h2 {
+    font-size: 40px;
+  }
+
+  .ai-image-wrapper {
+    height: 350px;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .ai-section {
+    gap: 36px;
+    padding: 50px 20px;
+  }
+
+  .ai-content h2 {
+    font-size: 34px;
+  }
+
+  .ai-heading {
+    margin-bottom: 24px;
+  }
+
+  .ai-item {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 12px;
+
+    padding: 15px 0;
+  }
+
+  .ai-item p {
+    font-size: 11px;
+  }
+
+  .ai-image-wrapper {
+    height: 280px;
+    border-radius: 14px;
+  }
+}

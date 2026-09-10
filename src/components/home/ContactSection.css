@@ -1,0 +1,170 @@
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 40px 80px;
+}
+
+/* Section title */
+.contact-section h2 {
+  margin: 0 0 50px;
+
+  text-align: center;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+
+/* =========================
+   MEMBER GRID
+========================= */
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+
+  width: 100%;
+}
+
+/* Member card */
+.member-card {
+  min-width: 0;
+  min-height: 240px;
+
+  padding: 24px 18px;
+
+  border: 1px solid #9aaa7b;
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+/* Member image */
+.member-image {
+  width: 80px;
+  height: 80px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+  background: #eeeeee;
+}
+
+
+/* =========================
+   MEMBER INFORMATION
+========================= */
+
+.member-card h3 {
+  margin: 0 0 8px;
+
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.member-card p {
+  margin: 0 0 20px;
+
+  color: #777777;
+
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.social-links a {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+  background: #eeeeee;
+
+  color: #000000;
+
+  font-size: 8px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-links svg {
+  width: 16px;
+  height: 16px;
+
+  display: block;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+  background: #dfe5d8;
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 900px) {
+  .contact-section {
+    max-width: 100%;
+    padding: 70px 32px 60px;
+  }
+
+  .member-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 50px 20px 48px;
+  }
+
+  .contact-section h2 {
+    margin-bottom: 36px;
+    font-size: 36px;
+  }
+
+  .member-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .member-card {
+    min-height: 220px;
+    padding: 22px 16px;
+  }
+}

@@ -1,0 +1,203 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.navbar-container {
+  position: relative;
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 18px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Navigation links */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar-link {
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-link:hover {
+  opacity: 0.6;
+}
+
+/* Desktop scan button */
+.scan-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 18px;
+
+  background: #485c11;
+  color: #ffffff;
+  border-radius: 24px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.scan-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Scan button icon */
+.scan-icon {
+  width: 6px;
+  height: 7px;
+  flex-shrink: 0;
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  display: none;
+
+  width: 36px;
+  height: 36px;
+  padding: 7px;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.menu-toggle span {
+  display: block;
+
+  width: 20px;
+  height: 2px;
+
+  background: #333333;
+  border-radius: 2px;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .navbar-container {
+    min-height: 64px;
+  }
+
+  /* Hide desktop navigation */
+  .navbar-menu {
+    display: none;
+  }
+
+  /* Hide desktop scan button */
+  .scan-button {
+    display: none;
+  }
+
+  /* Show hamburger button */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Show navigation when hamburger is opened */
+  .navbar-menu.is-open {
+    position: absolute;
+    top: 64px;
+    left: 24px;
+    right: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    padding: 8px 0;
+
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    z-index: 100;
+  }
+
+  .navbar-menu.is-open .navbar-link {
+    display: block;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  .navbar-menu.is-open .navbar-link:hover {
+    background: #f5f7f3;
+    opacity: 1;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .navbar-container {
+    min-height: 60px;
+  }
+
+  .navbar-logo {
+    font-size: 16px;
+  }
+
+  .menu-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menu-toggle span {
+    width: 19px;
+  }
+
+  .navbar-menu.is-open {
+    top: 60px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .navbar-menu.is-open .navbar-link {
+    padding: 13px 16px;
+    font-size: 13px;
+  }
+}

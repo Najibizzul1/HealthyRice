@@ -1,0 +1,203 @@
+/* =========================
+   HOW TO USE
+========================= */
+
+.how-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 40px 80px;
+}
+
+/* Section title */
+.how-section h2 {
+  margin: 0 0 50px;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: clamp(40px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+
+/* =========================
+   HOW TO USE GRID
+========================= */
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+
+  width: 100%;
+}
+
+/* Step item */
+.how-item {
+  min-width: 0;
+  padding: 30px 30px 40px 0;
+
+  border-right: 1px solid #e5e5e5;
+}
+
+.how-item:not(:first-child) {
+  padding-left: 30px;
+}
+
+.how-item:last-child {
+  border-right: none;
+}
+
+
+/* =========================
+   STEP NUMBER
+========================= */
+
+.how-number {
+  display: block;
+  margin-bottom: 50px;
+
+  color: #999999;
+
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+
+/* Step title */
+.how-item h3 {
+  margin: 0 0 15px;
+
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Step description */
+.how-item p {
+  max-width: 280px;
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   SECTION IMAGE
+========================= */
+
+.how-image-wrapper {
+  width: 100%;
+  height: 360px;
+
+  margin-top: 40px;
+
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.how-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .how-section {
+    max-width: 100%;
+    padding: 70px 32px 60px;
+  }
+
+  .how-section h2 {
+    margin-bottom: 40px;
+  }
+
+  .how-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .how-item {
+    padding: 24px 0;
+
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .how-item:not(:first-child) {
+    padding-left: 0;
+  }
+
+  .how-item:last-child {
+    border-bottom: none;
+  }
+
+  .how-number {
+    margin-bottom: 30px;
+    font-size: 36px;
+  }
+
+  .how-item p {
+    max-width: 500px;
+  }
+
+  .how-image-wrapper {
+    height: 320px;
+    margin-top: 30px;
+
+    border-radius: 16px;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .how-section {
+    padding: 50px 20px 48px;
+  }
+
+  .how-section h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+  }
+
+  .how-item {
+    padding: 20px 0;
+  }
+
+  .how-number {
+    margin-bottom: 24px;
+    font-size: 32px;
+  }
+
+  .how-item h3 {
+    font-size: 12px;
+  }
+
+  .how-item p {
+    font-size: 11px;
+  }
+
+  .how-image-wrapper {
+    height: 240px;
+    margin-top: 24px;
+
+    border-radius: 12px;
+  }
+}

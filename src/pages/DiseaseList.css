@@ -1,0 +1,176 @@
+/* =========================
+   DISEASE LIST
+========================= */
+
+.disease-list-section {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.disease-list-section h1 {
+  margin: 0 0 12px;
+
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.disease-list-section > .container > p {
+  margin: 0;
+
+  max-width: 650px;
+
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   DISEASE LIST
+========================= */
+
+.disease-list {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+
+  margin-top: 40px;
+}
+
+
+/* =========================
+   DISEASE CARD
+========================= */
+
+.disease-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 200px;
+
+  padding: 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e8e3;
+  border-radius: 16px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.disease-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.disease-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.disease-card p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   DETAIL LINK
+========================= */
+
+.disease-card a {
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-top: 24px;
+
+  color: #485c11;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: opacity 0.2s ease;
+}
+
+.disease-card a:hover {
+  opacity: 0.7;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .disease-list-section {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  .disease-list-section h1 {
+    font-size: 32px;
+  }
+
+  .disease-list {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    margin-top: 32px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .disease-list-section {
+    padding-top: 36px;
+    padding-bottom: 48px;
+  }
+
+  .disease-list-section h1 {
+    font-size: 28px;
+  }
+
+  .disease-list-section > .container > p {
+    font-size: 14px;
+  }
+
+  .disease-card {
+    min-height: auto;
+
+    padding: 20px;
+  }
+
+  .disease-card h3 {
+    font-size: 20px;
+  }
+}
