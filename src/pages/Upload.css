@@ -34,6 +34,29 @@
   line-height: 1.5;
 }
 
+/* =========================
+   CAMERA
+========================= */
+
+.camera-container {
+  margin-top: 30px;
+}
+
+.camera-video {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.camera-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
 
 /* =========================
    UPLOAD OPTIONS
