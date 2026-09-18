@@ -1,3 +1,5 @@
+import najibPhoto from '../../assets/images/Teams/Najib.png'
+
 import './ContactSection.css'
 
 function ContactSection() {
@@ -6,32 +8,32 @@ function ContactSection() {
       name: 'Rafi Dzaki Azhari',
       role: 'Data Science',
       image: '',
-      linkedin: 'https://www.linkedin.com/in/USERNAME',
-      github: 'https://github.com/USERNAME',
+      linkedin: 'https://www.linkedin.com/in/rafi-dzaki-azhari',
+      github: 'https://github.com/rdzvoltgt3',
       instagram: 'https://www.instagram.com/USERNAME',
     },
     {
       name: 'Revino Sava Gavrila',
       role: 'Data Science',
       image: '',
-      linkedin: 'https://www.linkedin.com/in/USERNAME',
-      github: 'https://github.com/USERNAME',
+      linkedin: 'https://www.linkedin.com/in/revinosavagavrila',
+      github: 'https://github.com/HEYHAYHOY',
       instagram: 'https://www.instagram.com/USERNAME',
     },
     {
       name: 'IKG Wisnu Satryo Nugroho',
       role: 'Fullstack',
       image: '',
-      linkedin: 'https://www.linkedin.com/in/USERNAME',
-      github: 'https://github.com/USERNAME',
+      linkedin: 'https://www.linkedin.com/in/ikg-wisnu-sn',
+      github: 'https://github.com/rishafa61',
       instagram: 'https://www.instagram.com/USERNAME',
     },
     {
       name: 'Muhammad Najib Izzulhaq',
       role: 'Fullstack',
-      image: '',
-      linkedin: 'https://www.linkedin.com/in/USERNAME',
-      github: 'https://github.com/USERNAME',
+      image: najibPhoto,
+      linkedin: 'https://www.linkedin.com/in/m-najib-izzulhaq',
+      github: 'https://github.com/Najibizzul1',
       instagram: 'https://www.instagram.com/USERNAME',
     },
   ]
