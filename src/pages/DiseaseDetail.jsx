@@ -73,6 +73,13 @@ function DiseaseDetail() {
             <p>{disease.description}</p>
           </div>
 
+          {/* Disease cause */}
+          <div className="detail-section">
+            <h2>Penyebab</h2>
+
+            <p>{disease.cause}</p>
+          </div>
+
           {/* Disease symptoms */}
           <div className="detail-section">
             <h2>Gejala</h2>
@@ -84,6 +91,13 @@ function DiseaseDetail() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Disease details */}
+          <div className="detail-section">
+            <h2>Detail Penyakit</h2>
+
+            <p>{disease.details}</p>
           </div>
 
           {/* Disease treatment */}
@@ -104,6 +118,44 @@ function DiseaseDetail() {
                 )
               )}
             </div>
+          </div>
+
+          {/* Disease prevention */}
+          <div className="detail-section">
+            <h2>Pencegahan</h2>
+            <div className="treatment-list">
+              {disease.prevention.map(
+                (prevention, index) => (
+                  <div
+                    className="treatment-card"
+                    key={prevention}
+                  >
+                    <span>{index + 1}</span>
+
+                    <p>{prevention}</p>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Disease sources */}
+          <div className="detail-section">
+            <h2>Sumber</h2>
+
+            <ul>
+              {disease.sources.map((source) => (
+                <li key={source.url}>
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {source.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
         </section>
