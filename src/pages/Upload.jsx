@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import Navbar from '../components/layout/Navbar'
@@ -10,14 +10,18 @@ import './Upload.css'
 
 function Upload() {
   const navigate = useNavigate()
+  
   const fileInputRef = useRef(null)
+  const cameraVideoRef = useRef(null)
+  const cameraStreamRef = useRef(null)
 
   const [image, setImage] = useState(null)
   const [preview, setPreview] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [isCameraOpen, setIsCameraOpen] = useState(false)
 
-  // Handle image selection from gallery or camera.
+  // Handle image selection from gallery.
   function handleFileChange(event) {
     const file = event.target.files?.[0]
 
@@ -39,6 +43,141 @@ function Upload() {
     setImage(file)
     setPreview(imageUrl)
   }
+
+  // Open the device camera or laptop webcam.
+  const handleOpenCamera = async () => {
+    try {
+      setError('')
+
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        setError('Browser tidak mendukung akses kamera.')
+        return
+      }
+
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: false,
+      })
+
+      cameraStreamRef.current = stream
+      setIsCameraOpen(true)
+
+      setTimeout(() => {
+        if (cameraVideoRef.current) {
+          cameraVideoRef.current.srcObject = stream
+        }
+      }, 100)
+    } catch (err) {
+      console.error('Camera error:', err)
+
+      if (err.name === 'NotAllowedError') {
+        setError('Akses kamera ditolak. Silakan izinkan kamera untuk localhost.')
+      } else if (err.name === 'NotFoundError') {
+        setError('Kamera tidak ditemukan pada perangkat ini.')
+      } else if (err.name === 'NotReadableError') {
+        setError('Kamera sedang digunakan oleh aplikasi lain.')
+      } else {
+        setError('Kamera tidak dapat diakses. Silakan coba lagi.')
+      }
+    }
+  }
+
+    // Capture an image from the camera stream.
+  function handleCapturePhoto() {
+    const video = cameraVideoRef.current
+
+    if (!video) return
+
+    if (
+      video.videoWidth === 0 ||
+      video.videoHeight === 0
+    ) {
+      setError(
+        'Kamera belum siap. Silakan tunggu sebentar.'
+      )
+      return
+    }
+
+    const canvas = document.createElement('canvas')
+
+    canvas.width = video.videoWidth
+    canvas.height = video.videoHeight
+
+    const ctx = canvas.getContext('2d')
+
+    if (!ctx) {
+      setError('Gagal mengambil foto dari kamera.')
+      return
+    }
+
+    ctx.drawImage(
+      video,
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    )
+
+    canvas.toBlob(
+      (blob) => {
+        if (!blob) {
+          setError('Gagal mengambil foto.')
+          return
+        }
+
+        const file = new File(
+          [blob],
+          `camera-${Date.now()}.jpg`,
+          {
+            type: 'image/jpeg',
+          }
+        )
+
+        const imageUrl =
+          URL.createObjectURL(file)
+
+        setImage(file)
+        setPreview(imageUrl)
+        setError('')
+
+        handleCloseCamera()
+      },
+      'image/jpeg',
+      0.9
+    )
+  }
+
+  // Stop the camera stream.
+  function handleCloseCamera() {
+    if (cameraStreamRef.current) {
+      cameraStreamRef.current
+        .getTracks()
+        .forEach((track) => track.stop())
+
+      cameraStreamRef.current = null
+    }
+
+    if (cameraVideoRef.current) {
+      cameraVideoRef.current.srcObject = null
+    }
+
+    setIsCameraOpen(false)
+  }
+
+  // Stop the camera when the component is unmounted.
+  useEffect(() => {
+    return () => {
+      if (cameraStreamRef.current) {
+        cameraStreamRef.current
+          .getTracks()
+          .forEach((track) => track.stop())
+      }
+
+      if (preview) {
+        URL.revokeObjectURL(preview)
+      }
+    }
+  }, [preview])
 
   // Compress the image before storing it in localStorage history.
   function compressImage(file) {
@@ -173,6 +312,37 @@ function Upload() {
                 </p>
               </div>
 
+            {/* Camera */}
+            {isCameraOpen && !preview && (
+              <div className="camera-container">
+                <video
+                  ref={cameraVideoRef}
+                  autoPlay
+                  playsInline
+                  muted
+                  className="camera-video"
+                />
+
+                <div className="camera-actions">
+                  <button
+                    type="button"
+                    className="secondary-button"
+                    onClick={handleCloseCamera}
+                  >
+                    Batal
+                  </button>
+
+                  <button
+                    type="button"
+                    className="primary-button"
+                    onClick={handleCapturePhoto}
+                  >
+                    Ambil Foto
+                  </button>
+                </div>
+              </div>
+            )}
+
             {/* Upload options */}
             {!preview && (
               <div className="upload-options">
@@ -189,18 +359,21 @@ function Upload() {
                   />
                 </label>
 
-                <label className="upload-box">
+                <button
+                  type="button"
+                  className="upload-box"
+                  onClick={handleOpenCamera}
+                >
                   <span>📷</span>
-                  <strong>Gunakan Kamera</strong>
-                  <small>Ambil foto langsung</small>
 
-                  <input
-                    type="file"
-                    accept="image/*"
-                    capture="environment"
-                    onChange={handleFileChange}
-                  />
-                </label>
+                  <strong>
+                    Gunakan Kamera
+                  </strong>
+
+                  <small>
+                    Ambil foto langsung
+                  </small>
+                </button>
               </div>
             )}
 
