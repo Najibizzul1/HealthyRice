@@ -1,3 +1,6 @@
+import rafiPhoto from '../../assets/images/Teams/Rafi.jpeg'
+import revinoPhoto from '../../assets/images/Teams/Revino.jpeg'
+import wisnuPhoto from '../../assets/images/Teams/Wisnu.jpeg'
 import najibPhoto from '../../assets/images/Teams/Najib.png'
 
 import './ContactSection.css'
@@ -7,26 +10,26 @@ function ContactSection() {
     {
       name: 'Rafi Dzaki Azhari',
       role: 'Data Science',
-      image: '',
+      image: rafiPhoto,
       linkedin: 'https://www.linkedin.com/in/rafi-dzaki-azhari',
       github: 'https://github.com/rdzvoltgt3',
-      instagram: 'https://www.instagram.com/USERNAME',
+      //instagram: 'https://www.instagram.com/USERNAME',
     },
     {
       name: 'Revino Sava Gavrila',
       role: 'Data Science',
-      image: '',
+      image: revinoPhoto,
       linkedin: 'https://www.linkedin.com/in/revinosavagavrila',
       github: 'https://github.com/HEYHAYHOY',
-      instagram: 'https://www.instagram.com/USERNAME',
+      //instagram: 'https://www.instagram.com/USERNAME',
     },
     {
       name: 'IKG Wisnu Satryo Nugroho',
       role: 'Fullstack',
-      image: '',
+      image: wisnuPhoto,
       linkedin: 'https://www.linkedin.com/in/ikg-wisnu-sn',
       github: 'https://github.com/rishafa61',
-      instagram: 'https://www.instagram.com/USERNAME',
+      //instagram: 'https://www.instagram.com/USERNAME',
     },
     {
       name: 'Muhammad Najib Izzulhaq',
@@ -34,7 +37,7 @@ function ContactSection() {
       image: najibPhoto,
       linkedin: 'https://www.linkedin.com/in/m-najib-izzulhaq',
       github: 'https://github.com/Najibizzul1',
-      instagram: 'https://www.instagram.com/USERNAME',
+      // instagram: 'https://www.instagram.com/USERNAME',
     },
   ]
 
@@ -107,7 +110,7 @@ function ContactSection() {
                 </svg>
               </a>
 
-              <a
+              {/* <a
                 href={member.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -122,7 +125,7 @@ function ContactSection() {
                     d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
                   />
                 </svg>
-              </a>
+              </a> */}
 
             </div>
           </article>
